@@ -89,7 +89,7 @@ checkpoint/
 runs/
 wandb/
 results/
-unsup-affordance/behavior1k_omnigibson_render/qa_merged
+unsup-affordance/behavior1k_omnigibson_render/qa-merged
 unsup-affordance/objaverse_blender_render/behavior1k
 unsup-affordance/objaverse_blender_render/objaverse_data
 unsup-affordance/checkpoints
