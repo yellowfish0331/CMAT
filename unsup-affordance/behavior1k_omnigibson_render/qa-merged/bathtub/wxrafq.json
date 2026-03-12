@@ -1,0 +1,1 @@
+{"orientation": [0.0, 0.0, 0.0, 1.0], "scale": [1.2100000000000002, 1.2100000000000002, 1.2100000000000002], "complaints": [{"object": "bathtub-wxrafq", "message": "Confirm reasonable bounding box size:\n84.54cm, 45.95cm, 27.22cm\nMake sure these sizes are within the same order of magnitude you expect from this object IRL.", "complaint": "too shallow", "processed": true}]}

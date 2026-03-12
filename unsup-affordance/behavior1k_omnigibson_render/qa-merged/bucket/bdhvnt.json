@@ -1,0 +1,1 @@
+{"orientation": [-4.656612873077393e-10, -1.280568540096283e-09, 0.3826834261417389, 0.9238795638084412], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "bucket-bdhvnt", "message": "Confirm object meta links:\nMake sure these match mechanisms you expect from this object.", "complaint": "fillable", "processed": true}]}

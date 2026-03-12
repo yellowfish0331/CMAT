@@ -1,0 +1,1 @@
+{"orientation": [-0.0005068017635494471, -0.0002220800524810329, 8.491971925650432e-07, 0.9999998807907104], "scale": [0.9090909090909091, 0.9090909090909091, 0.9090909090909091], "complaints": [{"object": "pedestal_table-tdpuit", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "not watertight", "processed": true}]}

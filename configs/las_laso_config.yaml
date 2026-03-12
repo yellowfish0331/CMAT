@@ -1,0 +1,99 @@
+# LAS Model Configuration for LASO Dataset (Text Prompt)
+# Lightweight Affordance Segmentor with Text Prompts
+
+model:
+  name: 'las'
+  prompt_type: 'text'  # 'text' for LASO dataset, 'visual' for PIAD dataset
+  
+  # Text encoder configuration (RoBERTa)
+  text_encoder:
+    model_name: 'roberta-base'  # or 'roberta-large'
+    local_model_path: 'roberta_base'  # Local path to RoBERTa model (relative to project root)
+    frozen: true
+    finetune_layers: 2  # Number of layers to fine-tune from the end
+    max_length: 128  # Maximum sequence length for tokenization
+  
+  # Point encoder configuration (Point-MAE)
+  point_encoder:
+    embed_dim: 384
+    depth: 12
+    num_heads: 6
+    group_size: 32
+    num_group: 128
+    mask_ratio: 0.0
+    pretrain: true
+    pretrain_path: 'pointmae/pretrain.pth'
+    frozen: false
+    # finetune_layers: 2  # Uncomment if you want to freeze some layers
+  
+  # Unified sequence configuration
+  unified_sequence:
+    unified_dim: 512  # Unified feature dimension
+  
+  # Co-attention transformer configuration
+  co_attention:
+    num_heads: 8
+    num_layers: 6
+    dim_feedforward: 2048
+    dropout: 0.1
+  
+  # Segmentation head configuration
+  segmentation_head:
+    hidden_dim: 256
+    num_layers: 3
+    dropout: 0.1
+
+# Dataset configuration
+dataset_type: 'laso'  # Use LASO dataset
+
+data:
+  image_size: [224, 224]  # Not used for text prompt, kept for compatibility
+  num_points: 2048
+  use_augmentation: true
+
+# Loss configuration
+loss:
+  type: 'las_loss'
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+  focal_weight: 0.5
+  dice_weight: 1.0
+
+# Training configuration
+training:
+  batch_size: 4  # Reduced batch size due to text processing
+  learning_rate: 1e-5
+  weight_decay: 0.01
+  epochs: 150
+  optimizer: 'adamw'  # 'adam' or 'adamw'
+  scheduler: 'cosine'  # 'cosine' or 'step' or null
+  num_workers: 4
+  
+  # Legacy compatibility fields; LAS uses the focal/dice settings above.
+  segmentation_loss_weight: 1.0
+  contrastive_loss_weight: 0.1
+
+# Paths configuration
+paths:
+  data_root: 'Data/LASO_dataset'  # Will be auto-detected if not specified
+  laso_data_root: 'Data/LASO_dataset'  # Specific path for LASO dataset
+  checkpoint_dir: 'checkpoints'
+  log_dir: 'logs'
+
+# Validation configuration
+validation:
+  frequency: 1  # Validate every N epochs
+  save_best: true
+  patience: 10  # Early stopping patience
+
+# Logging configuration
+logging:
+  log_level: 'INFO'
+  save_frequency: 5  # Save checkpoint every N epochs
+  print_frequency: 100  # Print loss every N batches
+
+# Hardware configuration
+hardware:
+  use_cuda: true
+  mixed_precision: false  # Set to true if you want to use AMP
+  pin_memory: true

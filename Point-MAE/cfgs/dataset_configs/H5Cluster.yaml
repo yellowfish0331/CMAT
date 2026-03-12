@@ -1,0 +1,10 @@
+NAME: H5Cluster
+h5_root: /path/to/stage1_h5_root
+categories: null
+subset: train
+npoints: 1024
+use_features: true
+feature_key: cluster_features
+label_key: cluster_labels
+points_key: cluster_points
+

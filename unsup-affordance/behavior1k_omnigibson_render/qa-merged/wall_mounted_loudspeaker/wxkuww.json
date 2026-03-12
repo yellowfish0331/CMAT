@@ -1,0 +1,1 @@
+{"orientation": [-0.7071064710617065, -6.862275768071413e-06, -7.02820580045227e-06, 0.7071072459220886], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "wall_mounted_loudspeaker-wxkuww", "message": "CONNECTED: Confirm object is a single body. An object cannot contain disconnected parts.", "complaint": "disconnected back mesh", "processed": false, "new": true}]}

@@ -1,0 +1,1 @@
+{"orientation": [-6.627778930123895e-07, -8.595333383709658e-06, -1.0, 2.6492962206248194e-06], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "skateboard_wheel-jljqtt", "message": "CONNECTED: Confirm object is a single body. An object cannot contain disconnected parts.", "complaint": "skateboard_wheel_assembly", "processed": false, "new": true}]}

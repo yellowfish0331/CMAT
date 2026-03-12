@@ -1,0 +1,104 @@
+# LAS Model Configuration for PIAD Dataset (Visual Prompt)
+# Lightweight Affordance Segmentor with Visual Prompts
+
+model:
+  name: 'las'
+  prompt_type: 'visual'  # 'visual' for PIAD dataset, 'text' for LASO dataset
+  
+  # Image encoder configuration (DINOv2/v3)
+  image_encoder:
+    model_name: 'dinov2_vitb14'  # or use DINOv3
+    # model_name: 'dinov3_vitb16'
+    frozen: false
+    finetune_layers: 2  # Number of layers to fine-tune from the end
+    # For DINOv3, uncomment these:
+    # dino_local_repo: 'dinov3'
+    # dino_local_weights_name: 'dinov3_vitb16/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth'
+  
+  # Point encoder configuration (Point-MAE)
+  point_encoder:
+    embed_dim: 384
+    depth: 12
+    num_heads: 6
+    group_size: 32
+    num_group: 128
+    mask_ratio: 0.0
+    pretrain: true
+    pretrain_path: 'pointmae/pretrain.pth'
+    frozen: false
+    # finetune_layers: 2  # Uncomment if you want to freeze some layers
+  
+  # Unified sequence configuration
+  unified_sequence:
+    unified_dim: 512  # Unified feature dimension
+  
+  # Co-attention transformer configuration
+  co_attention:
+    num_heads: 8
+    num_layers: 6
+    dim_feedforward: 1024
+    dropout: 0.1
+  
+  # Segmentation head configuration
+  segmentation_head:
+    hidden_dim: 256
+    num_layers: 3
+    dropout: 0.1
+
+# Dataset configuration
+dataset_type: 'piadv2'  # Use PIAD dataset
+
+data:
+  image_size: [224, 224]  # Image size for visual prompts
+  num_points: 2048
+  use_augmentation: true
+
+# Loss configuration
+loss:
+  type: 'las_loss'
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+  focal_weight: 0.5
+  dice_weight: 1.0
+
+# Training configuration
+training:
+  batch_size: 4  # Larger batch size for visual prompts
+  learning_rate: 1e-5
+  weight_decay: 0.01
+  epochs: 100
+  optimizer: 'adamw'  # 'adam' or 'adamw'
+  scheduler: 'cosine'  # 'cosine' or 'step' or null
+  num_workers: 4
+  
+  # Legacy compatibility fields; LAS uses the focal/dice settings above.
+  segmentation_loss_weight: 1.0
+  contrastive_loss_weight: 0.1
+
+# Paths configuration
+paths:
+  data_root: 'Data/PIADv2/Unseen_obj'  # PIAD dataset path
+  checkpoint_dir: 'checkpoints'
+  log_dir: 'logs'
+
+# PIAD specific settings
+setting_type: 'Seen'  # 'Seen' or 'Unseen'
+pair_num: 2
+
+# Validation configuration
+validation:
+  frequency: 1  # Validate every N epochs
+  save_best: true
+  patience: 10  # Early stopping patience
+
+# Logging configuration
+logging:
+  log_level: 'INFO'
+  save_frequency: 5  # Save checkpoint every N epochs
+  print_frequency: 100  # Print loss every N batches
+
+# Hardware configuration
+hardware:
+  use_cuda: true
+  mixed_precision: false  # Set to true if you want to use AMP
+  pin_memory: true

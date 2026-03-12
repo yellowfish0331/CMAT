@@ -1,0 +1,90 @@
+# LAS Model Configuration for PIAD Dataset
+model:
+  name: "las"  # Model type identifier
+  
+  # Image encoder settings (DINOv2-Base)
+  image_encoder:
+    # model_name: "dinov2_vitb14"
+    model_name: "dinov3_vitb16"
+    frozen: false # Set to true to freeze encoder and save computation
+    finetune_layers: 2 # Number of last layers to fine-tune
+    dino_local_repo: "dinov3"
+    dino_local_weights_name: "dinov3_vitb16/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth"
+    # dino_local_repo: null
+    # dino_local_weights_name: null 
+    
+  # Point cloud encoder settings (Point-MAE)
+  point_encoder:
+    input_dim: 3
+    embed_dim: 384
+    num_group: 64
+    group_size: 32
+    depth: 12
+    num_heads: 6
+    mask_ratio: 0.0  # Set to 0.0 to disable masking during training
+    pretrain: true
+    frozen: false
+    pretrain_path: "pointmae/pretrain.pth"
+    
+  # Unified sequence settings
+  unified_sequence:
+    unified_dim: 256  # Unified dimension for both modalities
+    
+  # Co-attentional Transformer settings
+  co_attention:
+    num_heads: 8
+    num_layers: 6
+    dim_feedforward: 512
+    dropout: 0.1
+    
+  # Dense segmentation head settings
+  segmentation_head:
+    hidden_dim: 128
+    num_layers: 3
+    dropout: 0.1
+
+# Training settings
+training:
+  epochs: 150
+  batch_size: 8  # Reduce batch size due to increased model size
+  learning_rate: 0.0001  # Reduce learning rate for stable training with more parameters
+  weight_decay: 0.0001
+  
+  # Loss settings
+  loss:
+    focal_alpha: 0.25
+    focal_gamma: 2.0
+    focal_weight: 1.0  # Increase focal loss weight to balance with dice loss
+    dice_weight: 1.0
+  
+  # Optimizer settings
+  optimizer: "adamw"
+  scheduler: "cosine"
+  warmup_epochs: 10
+  
+  # Gradient clipping
+  grad_clip_norm: 1.0
+
+# Data settings
+data:
+  num_points: 2048
+  image_size: [224, 224]  # PIAD数据集使用较小的图像尺寸
+  num_affordances: 17  # PIAD数据集有17个功能类别
+  num_objects: 23  # PIAD Seen设置的物体类别数
+  
+  # Data augmentation
+  point_cloud_jitter: 0.02
+  point_cloud_rotation: true
+  image_color_jitter: 0.2
+
+# Dataset settings
+dataset_type: "piad"  # 指定使用PIAD数据集
+setting_type: "Unseen"  # "Seen" or "Unseen"
+pair_num: 2  # 训练时每个图像对应的点云采样数量
+num_workers: 4
+
+# Paths
+paths:
+  data_root: "./Data/PIAD/Unseen"  # PIAD数据集根目录
+  checkpoint_dir: "./checkpoints"
+  log_dir: "./logs" 

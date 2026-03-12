@@ -1,0 +1,33 @@
+# Install PyTorch separately according to your CUDA version:
+# https://pytorch.org/get-started/locally/
+# Example:
+#   pip install torch torchvision
+
+# Core LAS training
+numpy==1.24.1
+scipy==1.10.0
+matplotlib==3.6.3
+scikit-learn==1.2.0
+open3d==0.16.0
+einops
+transformers==4.37.2
+pandas
+Pillow
+PyYAML
+tqdm
+tensorboard
+
+# Stage-0 / stage-1 shared utilities
+h5py
+opencv-python
+
+# Stage-0 rendering / fusion
+openexr==1.3.9
+mitsuba==3.0.1
+
+# Stage-1 Point-MAE extras
+easydict
+termcolor
+transforms3d
+timm==0.4.5
+ninja

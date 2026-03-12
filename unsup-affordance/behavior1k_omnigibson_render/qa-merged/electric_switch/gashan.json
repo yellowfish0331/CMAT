@@ -1,0 +1,1 @@
+{"orientation": [2.021569525822997e-05, -0.7193366885185242, -2.4139881134033203e-05, 0.6946617364883423], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "electric_switch-gashan", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "not watertight", "processed": false}]}

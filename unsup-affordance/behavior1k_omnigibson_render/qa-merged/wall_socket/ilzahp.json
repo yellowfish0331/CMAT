@@ -1,0 +1,1 @@
+{"orientation": [0.7071068286895752, 2.842170943040401e-14, -9.175093410723756e-14, 0.7071068286895752], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "wall_socket-ilzahp", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "unsure if should pick finer mesh", "processed": true}]}

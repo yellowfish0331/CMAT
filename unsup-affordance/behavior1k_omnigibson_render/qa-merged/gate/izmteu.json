@@ -1,0 +1,1 @@
+{"orientation": [-0.7056133151054382, 1.4267737924456014e-07, 0.7085971832275391, -2.7590592708293116e-06], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "gate-izmteu", "message": "CONNECTED: Confirm object is a single body. An object cannot contain disconnected parts.", "complaint": "two parts", "processed": false, "new": true}]}

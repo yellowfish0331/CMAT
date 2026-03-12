@@ -1,0 +1,1 @@
+{"orientation": [-2.462258521518379e-07, -0.7071068286895752, -4.3213367462158203e-07, 0.7071068286895752], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "door-ewqpfv", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "handles don't have holes", "processed": true}]}
