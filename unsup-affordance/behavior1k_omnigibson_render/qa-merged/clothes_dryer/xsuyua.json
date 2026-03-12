@@ -1,1 +1,0 @@
-{"orientation": [-9.313225746154785e-10, -4.0745362639427185e-10, 0.7071067690849304, 0.7071069478988647], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "clothes_dryer-xsuyua", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "the opening is a bit smaller than what it should be. maybe hand annotate", "processed": false}]}

@@ -1,1 +1,0 @@
-{"orientation": [1.1641532182693481e-10, -2.7939677238464355e-09, 1.4551915228366852e-11, 1.0000001192092896], "scale": [0.9090909090909091, 0.9090909090909091, 0.9090909090909091], "complaints": [{"object": "wine_bottle-dbccri", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "bottom face missing vmesh", "processed": true}]}

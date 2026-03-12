@@ -1,1 +1,0 @@
-{"orientation": [-2.692461142927982e-09, 1.1193716176194357e-08, 3.731594233613578e-08, 1.0], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "grocery_shelf-pbjodr", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "maybe hand-annotate: too many meshes", "processed": true}]}

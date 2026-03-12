@@ -1,1 +1,0 @@
-{"orientation": [2.0489096641540527e-08, -1.840235199779272e-07, -2.553570084273815e-07, 1.0000001192092896], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "electric_fan-lclkju", "message": "Confirm object meta links listed below:\n- N/A\n\nMake sure these match mechanisms you expect from this object.", "complaint": "togglebutton;coldsource", "processed": true}]}

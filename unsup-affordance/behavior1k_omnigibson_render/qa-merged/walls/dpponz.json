@@ -1,1 +1,0 @@
-{"orientation": [1.0000001192092896, 0.0, -2.509497332159327e-10, 0.0], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "walls-dpponz", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "wensi: doesn't reaaly capture the bumping (pillar) of wall", "processed": false}]}

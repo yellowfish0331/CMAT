@@ -1,1 +1,0 @@
-{"orientation": [2.110964123858139e-05, -0.7071068286895752, 2.8703831048915163e-05, 0.7071068286895752], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "gate-wvbxij", "message": "CONNECTED: Confirm object is a single body. An object cannot contain disconnected parts.", "complaint": "two parts", "processed": false, "new": true}]}

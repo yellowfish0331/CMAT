@@ -1,1 +1,0 @@
-{"orientation": [0.0, 0.0, 0.0, 1.0], "scale": [3.1384283767210035, 3.1384283767210035, 3.1384283767210035], "complaints": [{"object": "basket-pqzyxx", "message": "Confirm reasonable bounding box size:\n41.22cm, 58.66cm, 59.33cm\nMake sure these sizes are within the same order of magnitude you expect from this object IRL.", "complaint": "might be too big", "processed": true}]}

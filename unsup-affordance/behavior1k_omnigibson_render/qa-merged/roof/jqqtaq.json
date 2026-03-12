@@ -1,1 +1,0 @@
-{"orientation": [-1.0759322321973741e-09, 1.8673017621040344e-07, -8.984179089566169e-08, 1.0000001192092896], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "roofs-jqqtaq", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "roof too big, needs segmentation", "processed": false}]}

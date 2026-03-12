@@ -1,1 +1,0 @@
-{"orientation": [0.0, 0.0, 0.0, 1.0], "scale": [1.4641000000000008, 1.4641000000000008, 1.4641000000000008], "complaints": [{"object": "lubricant-bjfgim", "message": "Confirm object meta links listed below:\n- N/A\n\nMake sure these match mechanisms you expect from this object.", "complaint": "fluidsource;togglebutton;particleapplier?", "processed": true}]}

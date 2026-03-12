@@ -1,1 +1,0 @@
-{"orientation": [0.0, 0.0, 0.0, 1.0], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "chopping_board-ktxcvz", "message": "Confirm reasonable bounding box size:\n14.22cm, 22.24cm, 1.32cm\nMake sure these sizes are within the same order of magnitude you expect from this object IRL.", "complaint": "too small", "processed": true}]}

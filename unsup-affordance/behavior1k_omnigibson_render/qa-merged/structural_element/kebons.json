@@ -1,1 +1,0 @@
-{"orientation": [3.365491565987533e-11, -4.438938661088798e-10, 5.939190828030405e-08, 1.0], "scale": [1.0, 1.0, 1.0], "complaints": [{"object": "structural_element-kebons", "message": "Was at least one of the collision mesh candidates acceptable?", "complaint": "wensi: doesn't capture trees", "processed": true}]}
